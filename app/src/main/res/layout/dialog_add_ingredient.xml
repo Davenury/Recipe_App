@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/dialogAddIngTVTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dodaj Nowy Składnik"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/dialogAddIngETName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nazwa"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/dialogAddIngETAmount"
+        app:layout_constraintEnd_toStartOf="@+id/dialogAddIngETAmount"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/dialogAddIngETAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Ilość"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/dialogAddIngETMeasurement"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/dialogAddIngETName"
+        app:layout_constraintTop_toBottomOf="@+id/dialogAddIngTVTitle" />
+
+    <EditText
+        android:id="@+id/dialogAddIngETMeasurement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Miara"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/dialogAddIngETAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/dialogAddIngETAmount" />
+
+    <TextView
+        android:id="@+id/dialogAddIngTVAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Dodaj"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogAddIngETMeasurement" />
+
+    <TextView
+        android:id="@+id/dialogAddIngTVCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Anuluj"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dialogAddIngTVAdd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogAddIngETName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

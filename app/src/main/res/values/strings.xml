@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Przepisy!</string>
+    <string-array name="categories">
+        <item>Śniadanie</item>
+        <item>Drugie śniadanie</item>
+        <item>Obiad</item>
+        <item>Podwieczorek</item>
+        <item>Kolacja</item>
+    </string-array>
+    <string name="everything">Wszystko</string>
+    <string-array name="categories_for_recipes">
+        <item>@string/everything</item>
+        <item>Śniadanie</item>
+        <item>Drugie śniadanie</item>
+        <item>Obiad</item>
+        <item>Podwieczorek</item>
+        <item>Kolacja</item>
+    </string-array>
+</resources>
