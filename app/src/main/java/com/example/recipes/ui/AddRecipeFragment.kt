@@ -1,6 +1,7 @@
 package com.example.recipes.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ import com.example.recipes.ui.interfaces.AddStepListener
 import com.example.recipes.ui.rvAdapters.IngredientAdapter
 import com.example.recipes.ui.rvAdapters.StepAdapter
 import com.example.recipes.ui.rvClasses.Ingredient
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_add_recipe.*
 
 class AddRecipeFragment(
@@ -85,9 +87,19 @@ class AddRecipeFragment(
             ingredients
         ))
 
+        changeFragment()
+        clearViews()
+    }
+
+    private fun changeFragment(){
         val transaction = fragmentManager?.beginTransaction()
         transaction?.replace(R.id.flFragment, myRecipesFragment)
         transaction?.commit()
+    }
+
+    private fun clearViews(){
+        etName.text.clear()
+        etKcal.text.clear()
     }
 
     private fun setRecyclerViews(){

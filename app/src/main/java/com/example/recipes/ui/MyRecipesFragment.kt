@@ -1,15 +1,15 @@
 package com.example.recipes.ui
 
-import android.content.Context
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recipes.R
 import com.example.recipes.ui.interfaces.ShowDetailedRecipeListener
 import com.example.recipes.ui.rvAdapters.RecipeAdapter
+import kotlinx.android.synthetic.main.dialog_add_ingredient.*
 import kotlinx.android.synthetic.main.fragment_my_recipes.*
 
 class MyRecipesFragment(
@@ -54,5 +54,27 @@ class MyRecipesFragment(
                 }
             }
         }
+
+        setSearchBar(adapter)
+    }
+
+    private fun setSearchBar(adapter: RecipeAdapter) {
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(name: String?): Boolean {
+                viewModel.getRecipeByName("%$name%").observe(this@MyRecipesFragment, Observer {
+                    adapter.recipes = it
+                    adapter.notifyDataSetChanged()
+                })
+                return true
+            }
+
+            override fun onQueryTextChange(name: String?): Boolean {
+                viewModel.getRecipeByName("%$name%").observe(this@MyRecipesFragment, Observer {
+                    adapter.recipes = it
+                    adapter.notifyDataSetChanged()
+                })
+                return true
+            }
+        })
     }
 }

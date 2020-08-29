@@ -16,8 +16,8 @@ interface RecipeDao {
     @Query("SELECT * from Recipes where recipe_category = :category")
     fun getRecipesFromCategory(category: String): LiveData<List<RecipeItem>>
 
-    @Query("select * from Recipes where recipe_name = :name")
-    fun getRecipeByName(name: String): RecipeItem
+    @Query("select * from Recipes where recipe_name like :name")
+    fun getRecipeByName(name: String): LiveData<List<RecipeItem>>
 
     @Delete
     suspend fun delete(recipe: RecipeItem)

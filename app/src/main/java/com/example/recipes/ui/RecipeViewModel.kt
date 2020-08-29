@@ -27,6 +27,6 @@ class RecipeViewModel(
     fun getRecipesFromCategory(category: String) =
         repository.getRecipesFromCategory(category)
 
-    fun getRecipe(name: String) =
+    fun getRecipeByName(name: String) =
         repository.getRecipeByName(name)
 }
